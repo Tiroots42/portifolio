@@ -26,7 +26,7 @@ header{
     height: 100%; /*Altura*/
     object-fit: cover; /* cover esconde a tela quando movimentada */
     opacity: 0.5; /* Deixa img wrapper transparente */
-    animation: zoom 25s;
+    animation: zoom 10s;
 }
 
 @keyframes zoom { /*Animação*/
