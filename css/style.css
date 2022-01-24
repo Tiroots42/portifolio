@@ -2,9 +2,39 @@
 
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
 
-*{
+*{          /* Pagina inteira */
     margin: 0;
     padding: 0;
+    list-style: none; /* Tira icones do LI (bolinhas) */
+    text-decoration: none; /*Tira o sublinhado do LI */
+
+}
+
+:root {     /*Variavel para mudar letras (Fonte) do texto todo*/
+    --font-primary: "Nunito", serif;
+    --font-secundary: "Oswald", serif;
+    --font-action: "lato", serif;
+}
+
+
+.hamburguer{        /*Icone do menu hamburguer*/
+    width: 2rem;    /*largura*/
+    height: 2rem;   /*Altura*/
+    position: fixed;    /*posição do menu hamburguer*/
+    z-index: 100;       /*tudo fica atras do menu hamburguer*/    
+    right: 2rem;    /*Deixa o menu hamurguer na direita*/
+    top: 2rem;      /*Abaixa um pouco o menu hamburguer*/
+    display: flex; /*Espalhar as linhas do menu ...*/
+    flex-direction: column; /*Para ficar uma linha abaixo da outra*/
+    justify-content: space-evenly; /*Espalhar linhas*/
+    cursor: pointer;
+}
+
+.line {         /*linhas do menu hamburguer*/
+    width: 100%;  /*largura*/   
+    height: .1rem; /*Altura*/
+    background-color: #ffffff; /*Cor das linhas do menu hamburguer*/
+    box-shadow: 0.1rem 0.1rem 1px #000; /*sobra do menu para ver o que esta atras*/
 }
 
 header{
@@ -48,7 +78,7 @@ header{
 .banner h1{
     color: #ffffff; /*Cor fonte*/
     font-size: 3.5rem; /*Tamanho fonte*/
-    font-family: "Nunito", serif; /* serif se caso o site sair fora do ar */
+    font-family: var(--font-primary); /* serif se caso o site sair fora do ar */
     font-weight: 200; /* Diminui (peso) negrito na fonte */
     text-shadow: .3rem .4rem 2px rgba(0, 0, 0, .4); /* Sobra do texto */
     line-height: 3.5rem; /*Altura da linha */
@@ -59,7 +89,7 @@ header{
 }
 
 .banner p{
-    font-family: "Oswald", serif; /*Estilo da fonte*/
+    font-family: var(--font-secundary); /*Estilo da fonte*/
     color: blanchedalmond; /*Cor fonte*/
     font-size: 2rem; /*Tamanho*/
     text-shadow: .2rem .2rem rgba(0, 0, 0, .4); /*Sombra do texto*/
@@ -69,7 +99,7 @@ header{
 }
 
 .banner button {
-    font-family: "lato", serif; /*Estilo da fonte*/
+    font-family: var(--font-action); /*Estilo da fonte*/
     color: #FFFFFF; /*Cor fonte*/
     text-transform: uppercase; /*Texto grande padrao*/
     letter-spacing: .1rem; /*Espaço entre as letras*/
@@ -90,5 +120,65 @@ header{
         transform: translateY(0rem) rotateY(0);
         opacity: 1;       
     }
+}
+
+.sidebar {    /*Menu lateral*/
+    width: 20rem; /* Largura*/
+    height: 100vh; /* Altura */
+    background-color: #ffffff; /*Cor do menu lateral*/
+    position: fixed; /*sempre aparecera na mesma posição*/
+    top: 0; /*posição a esquerda - eixo Y*/
+    right: 0; /*posição a direita*/
+
+}
+
+.menu {  /*DIV*/
+    position: absolute;
+    top: 40%; /*Descer LI*/
+    left: 50%; /* Afasta LI da borda */
+    transform: translate(-50%, -50%); /* Deixa menus centralizados*/
+
+}
+
+.menu-item {    /* LI */
+    text-align: center; /*Deixar texto alinhado com centro*/
+    margin-bottom: .5rem;  /*Distancia entre letras*/
+}
+
+.menu-link {
+    font-family: var(--font-action);
+    font-size: 2rem; /*Tamanho*/
+    color: #4286f4; /*Cor da fonte (letras)*/
+    transition: color 1s;  /* Tempo para mudar a cor do menu-link:hover */
+}
+
+.menu-link:hover{      /*Mudar cor da fonte ao passar o mouse*/
+    color: black;
+
+}
+
+.social-media {   /*Alterar icones de redes sociais*/
+    position: absolute; 
+    bottom: 2rem;  /*Espaço entre o fim da pagina*/
+    width: 100%;  /* Largura*/
+    display: flex;
+    justify-content: space-evenly;  /*Distribui icones*/
+}
+
+.social-media i{
+    background-color: #4286f4 ;
+    color: #ffffff;   /*Cor dos icones das redes sociais*/
+    height: 2.5rem;  /* Altura */
+    width: 2.5rem; /* Largura*/
+    font-size: 2rem; /*Tamanho*/
+    display: flex; 
+    justify-content: center; /*Distribui icones junto com display: flex*/
+    align-items: center; /*Icones no centro alinhado*/
+    transition: background-color 1s; /* Tempo para mudar a cor dos icones redes sociais .social-media i */
+}
+
+.social-media i:hover{
+    background-color: black;   /* Tempo para mudar a cor do menu-link:hover */
+    
 }
 
