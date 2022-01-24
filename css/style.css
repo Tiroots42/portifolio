@@ -30,6 +30,11 @@
     cursor: pointer;
 }
 
+.show-menu .hamburguer {
+    right: 16rem;
+
+}
+
 .line {         /*linhas do menu hamburguer*/
     width: 100%;  /*largura*/   
     height: .1rem; /*Altura*/
@@ -128,9 +133,14 @@ header{
     background-color: #ffffff; /*Cor do menu lateral*/
     position: fixed; /*sempre aparecera na mesma posição*/
     top: 0; /*posição a esquerda - eixo Y*/
-    right: 0; /*posição a direita*/
-
+    right: -20rem; /*posição a direita*/
+    transition: 1s; /* Faz o sidebar sair da tela lentamente */
 }
+
+.show-menu .sidebar{ /* movimentação do sidebar */
+    right: 0;
+}
+
 
 .menu {  /*DIV*/
     position: absolute;
